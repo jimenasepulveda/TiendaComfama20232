@@ -2,28 +2,23 @@ package org.example;
 
 import org.example.Clases.Empleado;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-       //DENTRO DEL METODO MAIN ESCRIBO MI PROGRAMA Y CREO LOS OBJETOS
-        //CREANDO UNA VARIABLE
-        int edad=5;
-        System.out.println(edad);
+        //CREAR UN OBJETO ESPECIAL DE JAVA PARA RECIBIR DATOS POR TECLADO
+        Scanner entradaPorteclado = new Scanner(System.in);
 
-        //CREANDO NUESTRO PRIMER OBJETO UTILIZANDO EL CONSTRUCTOR VACIO
-        Cliente objeto = new Cliente();
-        //Yo uso un objeto para acceder a los atributos y metodos de la clase POR SEPARADO
-        objeto.edad=19;
-        System.out.println(objeto.edad);
-        objeto.nombre="Jimena Sepulveda Garcia";
-        System.out.println(objeto.nombre);
+        // CREAR UN OBJETO DE LA CLASE CLIENTE
+        Cliente cliente = new Cliente();
 
-        //CREANDO UN OBJETO UTILIZANDO EL CONSTRUCTOR LLENO
-        Cliente objetoDos = new Cliente("Sara", 30, "3107838960", "Clle50",10 );
-        System.out.println(objetoDos.edad);
-        System.out.println(objetoDos.nombre);
+        //PIDIENDOLE EL NOMBRE AL USUARIO:
+        System.out.print("Digita tu nombre: ");
+        cliente.setNombre(entradaPorteclado.next());
+        System.out.println(cliente.getNombre());
 
-        //CREANDO UN OBJETO DE LA CLASE EMPLEADOS
-        Empleado objetoTres= new Empleado();
-        System.out.println(objetoTres.nombre);
+        System.out.print("Digita tu edad: ");
+        cliente.setEdad(entradaPorteclado.nextInt());
+        System.out.println("su edad es: " + cliente.getEdad());
     }
 }
